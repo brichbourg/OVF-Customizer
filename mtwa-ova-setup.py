@@ -8,6 +8,7 @@ def mtwasetup():
 	#This will be used to get the name of the host so we grab the correct data from the ovfEnv XML
 	if os.path.exists("/etc/hostname"):
 		hostname = open("/etc/hostname").read()
+		hostname = hostname[:-1]
 	else:
 		print 'File ', os.path.realpath("/etc/hostname"), 'does not exist.  Please try again'
 		# sys.exit(1) #uncomment this and delete the next line when I run on a linux environment
